@@ -33,34 +33,15 @@ Quickstart
     >>> import pgeocode
 
     >>> nomi = pgeocode.Nominatim('fr')
-    >>> nomi.query_postal_code("75013")
-    postal_code               75013
-    country code                 FR
-    place_name             Paris 13
-    state_name        Île-de-France
-    state_code                   11
-    county_name               Paris
-    county_code                  75
-    community_name            Paris
-    community_code              751
-    latitude                48.8322
-    longitude                2.3561
-    accuracy                      5
-
     >>> nomi.query_postal_code(["75013", "69006"])
           postal_code place_name            state_name  latitude  longitude
     0       75013   Paris 13         Île-de-France   48.8322     2.3561
     1       69006    Lyon 06  Auvergne-Rhône-Alpes   45.7679     4.8506
 
-**Distance calculations**
-
-.. code:: python
-
     >>> dist = pgeocode.GeoDistance('fr')
     >>> dist.query_postal_code("75013", "69006")
     389.156
-    >>> dist.query_postal_code(["75013", "75014", "75015"], ["69006", "69005", "69004"])
-    array([ 389.15648697,  390.12577967,  390.49857655])
+
 
 
 
